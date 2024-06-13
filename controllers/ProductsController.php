@@ -34,6 +34,9 @@ class ProductsController extends \yii\web\Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
+                $model->img->UploadedFile::getInstance($model,'img');
+                $model->img->saveAs('productsImg/{$model->img->baseName}.{$model->img->extention}');
+                $model->save();
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {

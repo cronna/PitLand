@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row row-cols-4 gap-3">
         <?php foreach($products as $product): ?>
             <?php if($product->category_id === $model->id):?>
-                <a href='/catalog/view?id=<?= $product->id ?>' class="col card">
+                <a href='/products/view?id=<?= $product->id ?>' class="col card">
                     <div class="card-body">
                         <h5 class="card-title"><?= $product->title ?></h5>
                     </div>

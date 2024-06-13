@@ -8,6 +8,9 @@ use yii\grid\GridView;
 
 /** @var yii\web\View $this */
 /** @var categories $dataProvider */
+/**
+ * @var $categories;
+ * */
 
 $this->title = 'Каталог';
 ?>
@@ -25,12 +28,12 @@ $this->title = 'Каталог';
     <div class="row row-cols-4 gap-3">
         <?php foreach($categories as $category): ?>
             <a href='/catalog/view?id=<?= $category->id ?>' class="col card">
-                
                 <div class="card-body">
                     <h5 class="card-title"><?= $category->title ?></h5>
                 </div>
             </a>
         <?php endforeach; ?>
+
     </div>
 
 
