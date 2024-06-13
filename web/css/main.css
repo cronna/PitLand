@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Danfo&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 
 *{
     margin: 0;
@@ -104,17 +105,28 @@ input{
 }
 .search-form{
     font-family: 'Jost', sans-serif;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 20px;
 }
+
 .search-form input{
-    width: 300px;
+    width: 550px;
+    margin-left: -70px;
     height: 40px;
     border-radius: 5px;
     position: relative;
+
 }
+.poloska{
+    border-color: #3cc0ee;
+}
+
 .search-form button{
     height: 40px;
-    width: 60px;
-    background: black;
+    width: 75px;
+    background: #3cc0ee;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     position: absolute;
@@ -122,6 +134,8 @@ input{
     margin-left: -60px;
     border: none;
 }
+
+
 .catalog-link{
     width: 300px;
 }
@@ -156,18 +170,19 @@ input{
     width: 350px;
 }
 .main-logo{
-    font-family: 'Danfo', sans-serif;
+    font-family: 'Zen Dots', sans-serif;
     width: 200px;
     display: flex;
 }
 
 .information-magazin{
     display: block;
+    margin-left: 125px;
 }
 
 .widget-phone-content{
     display: block;
-    width: 265px;
+    width: 285px;
     font-family: 'Jost', sans-serif;
 
 }
@@ -181,11 +196,13 @@ input{
 }
 .main-logo h1{
     font-size: 50px;
+
 }
 .controlls{
     width: 350px;
     display: flex;
-    justify-content: space-between;
+    gap: 50px;
+    margin-left: 150px;
     font-family: 'Jost', sans-serif;
 
 }
@@ -286,4 +303,51 @@ footer{
 .create-ul a{
     color: white;
 }
+.sec-header{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*.catalog-nav{*/
+/*    background: #3cc0ee;*/
+/*    width: 1300px;*/
+/*    height: 100px;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
 
+/*}*/
+.catalog-nav{
+    width: 1300px;
+    height: 50px;
+    margin-top: 50px;
+    margin-left: 250px;
+}
+.catalog-nav a{
+    width: 170px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase ;
+    background-color: #3cc0ee;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 24px;
+
+}
+.catalog-nav a:not(:last-child) {
+    border-right: none;
+}
+.catalog-nav:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.catalog-nav a:hover {
+    background-color: #77d9fa;
+}
+
+.catalog-nav div{
+    margin:0 auto;
+}

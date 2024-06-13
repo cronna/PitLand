@@ -46,6 +46,22 @@ class m240602_044953_mainMigrate extends Migration
             'title' => $this->string()->notNull(),
             'description' => $this->text(),
         ]);
+        $this->createTable('categories_mini', [
+            'id' => $this->primaryKey(),
+            'title' => $this->string()->notNull(),
+            'description' => $this->text(),
+        ]);
+
+        $this->addForeignKey(
+            'products_to_category_fk',
+            'products',
+            'category_id',
+            'categories',
+            'id',
+            'CASCADE',
+            'CASCADE'
+        );
+
         $this->addForeignKey(
             'products_to_category_fk',
             'products',

@@ -2,13 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'pgsql:host=localhost;dbname=jooly',
-    'username' => 'postgres',
-    'password' => '',
+    'dsn' => 'pgsql:host=skr1pmen.ru;dbname=jooly',
+    'username' => 'camille',
+    'password' => 'camille',
     'charset' => 'utf8',
-
-    // Schema cache options (for production environment)
-    //'enableSchemaCache' => true,
-    //'schemaCacheDuration' => 60,
-    //'schemaCache' => 'cache',
 ];

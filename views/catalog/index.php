@@ -25,8 +25,9 @@ $this->title = 'Каталог';
     <div class="row row-cols-4 gap-3">
         <?php foreach($categories as $category): ?>
             <a href='/catalog/view?id=<?= $category->id ?>' class="col card">
+                
                 <div class="card-body">
-                    <h3 class="card-title"><?= $category->title ?></h5>
+                    <h5 class="card-title"><?= $category->title ?></h5>
                 </div>
             </a>
         <?php endforeach; ?>
