@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use app\entity\Categories;
+use app\models\CategoriesModel;
+use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -71,23 +73,22 @@ class CatalogController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Categories();
+        $model = new CategoriesModel();
 
-        if ($this->request->isPost) {
-            $model->load($this->request->post()) && $model->save();
-            $model->img->UploadedFile::getInstance($model, 'img');
-            $model->img->saveAs('productsImg/{$model->img->baseName}.{$model->img->extention}');
-            $model->save();
-
-            CategoryRepository::createNewCategory(
-                $model->title,
-                $model->description,
-                $model->img
-            );
-        } else {
-            $model->loadDefaultValues();
+        if ($model->load(Yii::$app->request->post())) {
+            $model->img = UploadedFile::getInstance($model, 'img');
+            if ($model->validate()) {
+                $categoryId = CategoryRepository::createNewCategory(
+                    $model->title,
+                    $model->description,
+                );
+                if (!empty($model->img)) {
+                    $file = $categoryId . '.' . $model->img->extension;
+                    $model->img->saveAs("productsImg/$file");
+                }
+                return $this->redirect('/catalog');
+            };
         }
-
         return $this->render('create', [
             'model' => $model,
         ]);
