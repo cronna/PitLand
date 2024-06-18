@@ -26,7 +26,7 @@ class CategoriesModel extends Model
             [['title'], 'required'],
             [['description'], 'string'],
             [['title'], 'string', 'max' => 255],
-            ['img', 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
+            ['img', 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg'],
         ];
     }
 

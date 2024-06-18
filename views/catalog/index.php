@@ -30,6 +30,7 @@ $this->title = 'Каталог';
             <a href='/catalog/view?id=<?= $category->id ?>' class="col card">
                 <div class="card-body">
                     <h5 class="card-title"><?= $category->title ?></h5>
+
                 </div>
             </a>
         <?php endforeach; ?>

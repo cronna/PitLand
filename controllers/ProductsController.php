@@ -2,6 +2,10 @@
 
 namespace app\controllers;
 use app\entity\Products;
+use app\repository\CategoryRepository;
+use app\repository\ProductRepository;
+use Yii;
+use yii\web\UploadedFile;
 
 class ProductsController extends \yii\web\Controller
 {
@@ -32,20 +36,29 @@ class ProductsController extends \yii\web\Controller
     {
         $model = new Products();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                $model->img->UploadedFile::getInstance($model,'img');
-                $model->img->saveAs('productsImg/{$model->img->baseName}.{$model->img->extention}');
-                $model->save();
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
-        } else {
-            $model->loadDefaultValues();
+        if ($model->load(Yii::$app->request->post())) {
+            $model->img = UploadedFile::getInstance($model, 'img');
+            if ($model->validate()) {
+                $productsId = ProductRepository::createNewProducts(
+                    $model->title,
+                    $model->description,
+                    $model->price,
+                    $model->quantity,
+                    $model->category_id
+                );
+                if (!empty($model->img)) {
+                    $file = $productsId . '.' . $model->img->extension;
+                    $model->img->saveAs("productsImg/$file");
+                }
+                return $this->redirect('/catalog');
+            };
         }
-
         return $this->render('create', [
             'model' => $model,
         ]);
+
+
+
     }
 
     /**

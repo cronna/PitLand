@@ -252,7 +252,7 @@ footer{
 
 .card{
     width: 426px;
-    height: 170px;
+    height: 370px;
     border: none;
     background: rgb(248, 248, 248);
     font-family: 'Jost', sans-serif;
@@ -264,6 +264,7 @@ footer{
 
 .row {
     margin-top: 30px;
+
 }
 
 .card-body{
@@ -350,4 +351,36 @@ footer{
 
 .catalog-nav div{
     margin:0 auto;
+}
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-img-top img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+.card-img-top {
+    width: 100%; /* Задает ширину изображения равной ширине карточки */
+    overflow: hidden; /* Обрезает изображение, если оно выходит за пределы блока */
+}
+
+.card-img-top img {
+    width: 100%;
+    height: auto; /* Поддерживает пропорции изображения */
+    display: block;
 }

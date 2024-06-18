@@ -6,6 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\entity\Categories $model */
 /** @var $products */
+/** @var $category */
 
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Categories', 'url' => ['index']];
@@ -32,8 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'title',
-            'description:ntext',
-            'img'
+            'description:ntext'
         ],
     ]) ;
     ?>
@@ -44,10 +44,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 <a href='/products/view?id=<?= $product->id ?>' class="col card">
                     <div class="card-body">
                         <h5 class="card-title"><?= $product->title ?></h5>
+                        <img src='/productsImg/<?= $category->id ?>.jpeg'>
                     </div>
                 </a>
             <?php endif; ?>
         <?php endforeach; ?>
     </div>
 
+
 </div>
+
+
+

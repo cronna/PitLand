@@ -23,8 +23,8 @@ class AuthForm extends \yii\base\Model
     public function attributeLabels()
     {
         return [
-            'phone' => 'номер телефона',
-            'password' => 'пароль'
+            'phone' => 'Номер телефона',
+            'password' => 'Пароль'
         ];
     }
 
@@ -33,7 +33,7 @@ class AuthForm extends \yii\base\Model
         if(!$this->hasErrors()){
             $user = $this->getUser();
             if(!$user || !$user->validatePassword($this->password)){
-                $this->addError($attribute, 'неправильный номер или пароль!');
+                $this->addError($attribute, 'Неправильный номер или пароль!');
             }
         }
     }

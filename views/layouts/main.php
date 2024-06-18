@@ -88,24 +88,26 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 </header>
 <div class="catalog-nav">
     <div class="catalog-nav-id">
-        <a href="/catalog/view?id=2">Техника</a>
+        <a href="/catalog/view?id=1">Техника</a>
         <a href="/catalog/view?id=3">Экипировка</a>
         <a href="/catalog/view?id=4">Акксесуры</a>
         <a href="/catalog/view?id=5">Масло</a>
+        <a href="/catalog/">Каталог</a>
+
     </div>
 </div>
 <form action="" class="search-form">
     <input class="poloska" type="text" placeholder='Поиск'>
     <button><svg xmlns="http://www.w3.org/2000/svg" fill='white'  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"/></svg></button>
 </form>
-<div class="sec-header">
-    <div class="catalog-link">
-        <a href='/catalog/'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill='white' viewBox="0 0 12 16"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"/></svg>
-            <span>Каталог</span>
-        </a>
-    </div>
-</div>
+<!--<div class="sec-header">-->
+<!--    <div class="catalog-link">-->
+<!--        <a href='/catalog/'>-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill='white' viewBox="0 0 12 16"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"/></svg>-->
+<!--            <span>Каталог</span>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!--<form action="/views/layouts/main.php" method="post" enctype="multipart/form-data">-->
 <!--    Выберите файл для загрузки:-->
@@ -114,21 +116,6 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <!---->
 <!--</form>-->
 <!---->
-<?php
-//if(isset($_FILES['photo'])) {
-//    $file_name = $_FILES['photo']['name'];
-//    $file_tmp = $_FILES['photo']['tmp_name'];
-//    $target_dir = "web/css/photo";
-//
-//    if(move_uploaded_file($file_tmp, $target_dir . $file_name)) {
-//        echo "Файл успешно загружен.";
-//    } else {
-//        echo "Ошибка загрузки файла.";
-//    }
-//} else {
-//    echo "Файл не был загружен.";
-//}
-//?>
 
 <main id="main" class="flex-shrink-0" role="main">
     <div class="container">
@@ -139,6 +126,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         <?= $content ?>
     </div>
 </main>
+
+
 
 <!--<footer id="footer" class="mt-auto py-3 bg-light">-->
 <!--    <div class="footer-map">-->
