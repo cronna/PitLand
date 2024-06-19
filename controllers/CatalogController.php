@@ -73,22 +73,18 @@ class CatalogController extends Controller
      */
     public function actionCreate()
     {
-        $model = new CategoriesModel();
+        $model = new Categories();
 
-        if ($model->load(Yii::$app->request->post())) {
+        if (Yii::$app->request->isPost) {
+            $model->load($this->request->post());
             $model->img = UploadedFile::getInstance($model, 'img');
-            if ($model->validate()) {
-                $categoryId = CategoryRepository::createNewCategory(
-                    $model->title,
-                    $model->description,
-                );
-                if (!empty($model->img)) {
-                    $file = $categoryId . '.' . $model->img->extension;
-                    $model->img->saveAs("productsImg/$file");
-                }
-                return $this->redirect('/catalog');
-            };
+            $model->img->saveAs("category_img/{$model->img->baseName}.{$model->img->extension}");
+            $model->save(false);
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            $model->loadDefaultValues();
         }
+
         return $this->render('create', [
             'model' => $model,
         ]);

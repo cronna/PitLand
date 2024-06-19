@@ -13,13 +13,4 @@ class CategoryRepository
     {
         return Categories::find()->where($where)->one();
     }
-
-    public static function createNewCategory($title, $description)
-    {
-        $category = new Categories();
-        $category->title = $title;
-        $category->description = $description;
-        $category->save();
-        return $category->id;
-    }
 }
